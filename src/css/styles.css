@@ -8,7 +8,9 @@
 }
 
 :root {
-  --main-bg: hsla(254, 13%, 19%, 1);
+  --main-bg: linear-gradient(180deg, #807ece 0%, #8e7ece 100%);
+
+  --calc-bg: hsla(254, 13%, 19%, 1);
   --primary-btn-bg: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.05) 0%,
@@ -28,4 +30,62 @@
     ),
     linear-gradient(0deg, #7f45e2, #7f45e2);
   --color-violet: hsla(262, 94%, 67%, 1);
+
+  --white: hsl(0, 0%, 100%);
+
+  --dark-700: #2d2a37;
+}
+
+body {
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--main-bg);
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+#calculator {
+  flex-direction: column;
+  background: var(--calc-bg);
+  padding: 1.5rem;
+  border-radius: 2rem;
+}
+
+#operations-container * {
+  overflow-wrap: break-word;
+  min-height: 1.5rem;
+  text-align: right;
+  padding: 0.5rem;
+}
+
+/* #previous-op {
+  font-size: ;
+} */
+
+#buttons-container {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.num-btn {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    ),
+    var(--dark-700);
+  color: var(--white);
+  padding: 1.5rem 1rem;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  filter: drop-shadow(0 0 0.15rem hsla(0, 0%, 25%, 0.4));
+  /* clip-path: circle(); */
 }
