@@ -81,8 +81,22 @@ body {
   border: none;
   font-size: 1.2rem;
   clip-path: circle();
+  cursor: pointer;
 }
 
 :nth-child(1 of .num-btn) {
   color: var(--color-violet);
+}
+
+.op-btn {
+  background: var(--secondary-btn-bg);
+}
+
+#equal-btn {
+  background: var(--terciary-btn-bg);
+  grid-column: span 2;
+  border-radius: 5rem;
+  border: none;
+  color: var(--white);
+  font-size: 2rem;
 }
