@@ -84,7 +84,7 @@ body {
   cursor: pointer;
 }
 
-:nth-child(1 of .num-btn) {
+.num-btn:nth-of-type(1) {
   color: var(--color-violet);
 }
 
