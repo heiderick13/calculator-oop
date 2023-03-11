@@ -4,4 +4,16 @@ export default class Calculator {
     this.currentOpText = currentOpText;
     this.currentOp = "";
   }
+
+  addDigit(digit) {
+    if (digit === "." && this.currentOpText.innerText.includes(".")) {
+      return;
+    }
+    this.currentOp = digit;
+    this.updateScreen();
+  }
+
+  updateScreen() {
+    this.currentOpText.innerText += this.currentOp;
+  }
 }

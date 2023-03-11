@@ -6,15 +6,16 @@ const currentOperation = document.querySelector("#current-op");
 const btns = document.querySelectorAll(
   '#buttons-container input[type="button"]'
 );
+const calc = new Calculator(previousOperation, currentOperation);
 
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     let value = e.target.value;
 
     if (+value >= 0 || value == ".") {
-      console.log(value);
+      calc.addDigit(value);
     } else {
-      console.log("Op: " + value);
+      calc.processOperation(value);
     }
   });
 });
