@@ -23,7 +23,7 @@ btns.forEach((btn) => {
 const clearConsole = () => {
   setTimeout(() => {
     console.clear();
-  }, 2000);
+  }, 1500);
 };
 
 clearConsole();
