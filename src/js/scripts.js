@@ -15,7 +15,7 @@ btns.forEach((btn) => {
     if (+value >= 0 || value == ".") {
       calc.addDigit(value);
     } else {
-      calc.processOperation(value);
+      calc.handleOperation(value);
     }
   });
 });

@@ -13,7 +13,7 @@ export default class Calculator {
     this.updateScreen();
   }
 
-  processOperation(operation) {
+  handleOperation(operation) {
     if (this.currentOpText.innerText === "" && operation !== "C") {
       if (this.previousOpText.innerText !== "") {
         this.changeOperation(operation);
@@ -42,16 +42,16 @@ export default class Calculator {
         this.updateScreen(operationValue, operation, current, previous);
         break;
       case "DEL":
-        this.processDelOp();
+        this.handleDelOp();
         break;
       case "CE":
-        this.processClearCurrentOp();
+        this.handleClearCurrentOp();
         break;
       case "C":
-        this.processClearAllOp();
+        this.handleClearAllOp();
         break;
       case "=":
-        this.processEqualOp();
+        this.handleEqualOp();
         break;
 
       default:
@@ -88,27 +88,27 @@ export default class Calculator {
       this.previousOpText.innerText.slice(0, -1) + operation;
   }
 
-  processDelOp() {
+  handleDelOp() {
     this.currentOpText.innerText = this.currentOpText.innerText.slice(0, -1);
   }
 
-  processClearCurrentOp() {
+  handleClearCurrentOp() {
     this.currentOpText.innerText = "";
   }
 
-  processClearAllOp() {
+  handleClearAllOp() {
     this.currentOpText.innerText = "";
     this.previousOpText.innerText = "";
   }
 
-  processEqualOp() {
+  handleEqualOp() {
     let operation = this.previousOpText.innerText.split(" ")[1];
     let current = this.currentOpText.innerText;
 
     if (operation === "/" && current === "0") {
       return;
     } else {
-      this.processOperation(operation);
+      this.handleOperation(operation);
     }
   }
 }
