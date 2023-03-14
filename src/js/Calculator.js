@@ -106,9 +106,21 @@ export default class Calculator {
     let current = this.currentOpText.innerText;
 
     if (operation === "/" && current === "0") {
-      return;
+      this.cantDivideByZero();
     } else {
       this.handleOperation(operation);
     }
+  }
+
+  cantDivideByZero() {
+    const operations = document.querySelector("#operations-container");
+    const warn = document.createElement("span");
+    warn.innerHTML = `<span class="cant-divide-zero">Can't divide by 0</span>`;
+
+    operations.appendChild(warn);
+
+    setTimeout(() => {
+      warn.remove();
+    }, 2500);
   }
 }
