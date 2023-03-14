@@ -103,7 +103,12 @@ export default class Calculator {
 
   processEqualOp() {
     let operation = this.previousOpText.innerText.split(" ")[1];
+    let current = this.currentOpText.innerText;
 
-    this.processOperation(operation);
+    if (operation === "/" && current === "0") {
+      return;
+    } else {
+      this.processOperation(operation);
+    }
   }
 }
