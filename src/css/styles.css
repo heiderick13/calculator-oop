@@ -29,7 +29,7 @@
       rgba(255, 255, 255, 0.05) 100%
     ),
     linear-gradient(0deg, #7f45e2, #7f45e2);
-  --color-violet-dark: rgb(79, 53, 126);
+  --color-violet-dark: hsl(261, 41%, 35%);
   --color-violet: hsla(262, 94%, 67%, 1);
   --grayish-violet: rgb(156, 134, 192);
 
@@ -41,6 +41,13 @@ body {
   justify-content: center;
   min-height: 100vh;
   background: var(--main-bg);
+  position: relative;
+}
+
+.cant-divide-zero {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-violet-dark);
 }
 
 .grid {
